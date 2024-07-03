@@ -1,0 +1,18 @@
+Type: Package
+Package: rcudarmadillo
+Title: Package to test CUDA with RcppArmadillo
+Version: 1.0
+Date: 2024-07-03
+Author: Renato Samperio
+Maintainer: Renato Samperio <renatosamperio@gmail.com>
+Description: Benchmark of armmadillo with CUDA.
+License: GPL (>= 2)
+Imports: 
+    Rcpp (>= 1.0.12)
+Suggests: 
+    tinytest
+LinkingTo: 
+    Rcpp,
+    RcppArmadillo
+Encoding: UTF-8
+RoxygenNote: 7.3.1
