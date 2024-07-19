@@ -1,0 +1,21 @@
+
+
+services:
+  rcuda:
+    container_name: rcuda
+    image: renatosamperio/rcuda
+    privileged: true
+    platform: linux/amd64
+    command: /bin/bash -c "sleep infinity"
+    working_dir: /home/rmpuser
+    runtime: nvidia
+    # user: 1000:1000
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: 1
+            capabilities: [gpu]
+    volumes:
+      - "${LOCAL_ENV}:/home/rmpuser/"

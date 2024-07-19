@@ -4,14 +4,14 @@
 \alias{solveMatrix}
 \title{An example to solve a system}
 \usage{
-solveMatrix(rows = 300, cols = 200, iterations = 20)
+solveMatrix(A = NA, B = NA, size = 200)
 }
 \arguments{
-\item{rows}{`numeric` number of rows}
+\item{A}{`matrix` `numeric` input matrix}
 
-\item{cols}{`numeric` number of columns}
+\item{B}{`matrix` `numeric` input matrix}
 
-\item{iterations}{`numeric` number tries}
+\item{size}{`numeric` size of square matrix}
 }
 \description{
 An example to solve a system

@@ -32,7 +32,7 @@ Reading symbols from /usr/local/lib64/R/bin/exec/R...
 ## Set break point
  
 ```
-(gdb) break arma_matrix.cpp:12
+(gdb) break arma_matrix.cpp:11
 No source file named sum_vectors.cpp.
 Make breakpoint pending on future shared library load? (y or [n]) y
 Breakpoint 1 (arma_matrix.cpp:8) pending.

@@ -11,22 +11,33 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// solve_problem
-arma::mat solve_problem(int rows, int cols, int iterations);
-RcppExport SEXP _rcudarmadillo_solve_problem(SEXP rowsSEXP, SEXP colsSEXP, SEXP iterationsSEXP) {
+// solve_linear
+arma::mat solve_linear(const arma::mat& A, const arma::mat& B);
+RcppExport SEXP _rcudarmadillo_solve_linear(SEXP ASEXP, SEXP BSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< int >::type rows(rowsSEXP);
-    Rcpp::traits::input_parameter< int >::type cols(colsSEXP);
-    Rcpp::traits::input_parameter< int >::type iterations(iterationsSEXP);
-    rcpp_result_gen = Rcpp::wrap(solve_problem(rows, cols, iterations));
+    Rcpp::traits::input_parameter< const arma::mat& >::type A(ASEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type B(BSEXP);
+    rcpp_result_gen = Rcpp::wrap(solve_linear(A, B));
+    return rcpp_result_gen;
+END_RCPP
+}
+// inverse_matrix
+arma::mat inverse_matrix(const arma::mat& A);
+RcppExport SEXP _rcudarmadillo_inverse_matrix(SEXP ASEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const arma::mat& >::type A(ASEXP);
+    rcpp_result_gen = Rcpp::wrap(inverse_matrix(A));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_rcudarmadillo_solve_problem", (DL_FUNC) &_rcudarmadillo_solve_problem, 3},
+    {"_rcudarmadillo_solve_linear", (DL_FUNC) &_rcudarmadillo_solve_linear, 2},
+    {"_rcudarmadillo_inverse_matrix", (DL_FUNC) &_rcudarmadillo_inverse_matrix, 1},
     {NULL, NULL, 0}
 };
 

@@ -8,7 +8,8 @@ Maintainer: Renato Samperio <renatosamperio@gmail.com>
 Description: Benchmark of armmadillo with CUDA.
 License: GPL (>= 2)
 Imports: 
-    Rcpp (>= 1.0.12)
+    Rcpp (>= 1.0.12),
+    stats
 Suggests: 
     tinytest
 LinkingTo: 

@@ -1,10 +1,11 @@
-#include <armadillo>
-#include <Rcpp.h>
-using namespace Rcpp;
+#include <RcppArmadillo.h>
+// [[Rcpp::depends(RcppArmadillo)]]
 
-//' Matrix solver 
-//' @param rows `numeric` matrix rows
-//' @param cols `numeric` matrix columns
-//' @param iterations `numeric` number of tries
+// Function to solve a system of linear equations
 // [[Rcpp::export]]
-arma::mat solve_problem(int rows, int cols, int iterations);
+arma::mat solve_linear(const arma::mat& A, const arma::mat& B);
+
+
+// Function to calculate the inverse of a matrix
+// [[Rcpp::export]]
+arma::mat inverse_matrix(const arma::mat& A);
